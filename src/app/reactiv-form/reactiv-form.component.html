@@ -1,0 +1,9 @@
+<form action="" [formGroup]="eventDetail" (ngSubmit)="onRegister()" #eventForm="ngForm" >
+    <div>
+        <input type="text" name="fullName" id=""formControlName='fullName' >
+        <div class="text-danger" *ngIf="eventDetail.controls['fullName'].touched  && eventDetail.controls['fullName'].hasError('required')  " >
+            *required
+        </div>
+    </div>
+    <button type="submit" [disabled]="eventForm.invalid" >submit</button>
+</form>
